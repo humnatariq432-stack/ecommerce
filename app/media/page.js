@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 
   import { ToastContainer, toast } from 'react-toastify';
