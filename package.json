@@ -9,9 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.13.0",
+    "axios": "^1.20.0",
+    "jose": "^6.2.12",
+    "mongoose": "^9.11.2",
     "next": "16.4.0",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-hook-form": "^7.89.0",
+    "react-redux": "^9.3.0",
+    "react-toastify": "^11.1.0",
+    "uuid": "^14.0.2"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",

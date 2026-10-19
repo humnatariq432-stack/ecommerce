@@ -1,0 +1,183 @@
+<!-- import Card from "@/components/card/card"
+
+export default function Data(){
+
+    let students = [
+        {
+            name:'ali',
+            uni:'GC'
+        },
+        {
+            name:'aqsa',
+            uni:'agri'
+        },
+        {
+            name:'rameez',
+            uni:'TUFF'
+        }
+    ]
+
+    let products = [
+        {
+            title :"product 1"
+        },
+        {
+            title :"product 2"
+        },
+        {
+            title :"product 3"
+        }
+    ]
+
+    return <div>
+
+        {
+            products.map(function(product){
+                return <>
+                        {/* <h1>aksdjksa</h1> */}
+                        <Card title={product.title} />
+                      </>
+            })
+        }
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Uni</th>
+                </tr>
+            </thead>
+            {
+                students.map((student)=>{
+                    return <tr>
+                        <td>{student.name}</td>
+                        <td>{student.uni}</td>
+                    </tr>
+                })
+            }
+        </table>
+
+
+    </div>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import Card from "@/components/card/card"
+
+export default function Data(){
+
+    let students = [
+        {
+            name:'ali',
+            uni:'GC'
+        },
+        {
+            name:'aqsa',
+            uni:'agri'
+        },
+        {
+            name:'rameez',
+            uni:'TUFF'
+        }
+    ]
+
+    let products = [
+        {
+            title :"product 1"
+        },
+        {
+            title :"product 2"
+        },
+        {
+            title :"product 3"
+        }
+    ]
+
+    return <div>
+
+        {
+            products.map(function(product){
+                return <>
+                        {/* <h1>aksdjksa</h1> */}
+                        <Card title={product.title} />
+                      </>
+            })
+        }
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Uni</th>
+                </tr>
+            </thead>
+            {
+                students.map((student)=>{
+                    return <tr>
+                        <td>{student.name}</td>
+                        <td>{student.uni}</td>
+                    </tr>
+                })
+            }
+        </table>
+
+
+    </div>
+
+}
+
+
+
+
+
+
+
+
+  
+  export function calculate(a, b, op){
+
+    let c = 0;
+
+        switch(op){
+
+            case '+':
+                c = +a + +b;
+            break;
+
+             case '/':
+                c = a / b;
+            break;
+
+            case '*':
+                c = a * b;
+            break;
+
+             case '-':
+                c = a - b;
+            break;
+
+        }
+
+        return c;
+        
+
+    } -->

@@ -1,0 +1,236 @@
+'use client';
+
+import { useState } from "react"
+
+export default function Page(){
+
+    let [name, setName] =  useState();
+
+    return <div>
+
+        <input onInput={function(evt){
+            
+            setName(evt.target.value);
+
+        }} type="text" />
+
+        <h1>{name}</h1>
+        <h2>{name}</h2>
+        <h3>{name}</h3>
+        <h4>{name}</h4>
+        <h5>{name}</h5>
+        <h6>{name}</h6>
+        
+        <textarea name="" id=""  value={name}></textarea>
+
+    </div>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"use client";
+import Card from "@/components/card/card"
+import { useEffect, useState } from "react";
+import $ from 'jquery';
+import './style.css'
+
+
+// MV-VM
+// Modal View          -    View Modal
+// (data, UI, html)        (UIhtml, data,)
+
+function Some(){
+
+
+
+    // useEffect kab chlta
+    //1 jab component create hota
+    //2 jab component ka data change hota
+    //3 jab component browser se remvoe hone lgta (jaisy aapne page change kia to current page per jo bhi component that wo khatam hojyega)
+    // useEffect(function(){
+
+    //     box.innerText = "ali";
+
+    // })
+
+    //  $.getJSON('https://api.weatherapi.com/v1/current.json?key=488239eff5e146109e6123017261709&q=gilgit&aqi=no')
+    //  .then(
+    // function(meraData){
+        
+
+    //     box.innerText = meraData.current.temp_c;
+
+    // },
+    //  function(errr){
+    //     console.log('error agua');
+    //     console.lo(errr)
+    // })
+
+    // useEffect(function(){  
+        
+    //     $('.box').on('click', function(evt){
+    //         evt.target.style.backgroundColor = 'blue';
+    //     });
+
+    // }, [])
+
+
+    // useEffect(function(){
+
+    //     alert(20)
+
+    // }, [])
+
+    // let d = 0;
+
+    // setInterval(function(){
+    //     d++;
+    //     some.innerText= d;
+
+    // }, 100);
+
+    // state means model(data)
+    let [names, setNames] = useState(['ali', 'aqsa', 'rameez']);
+    // yeh set wala function yeh 2 kaam karta h 
+    //1 state ka data change krega
+    //2 component ki UI ko bhi change kardega
+
+
+
+    return <div>
+        <ol>
+        {
+            names.map(function(name, i){
+                return <li> 
+                        {name}
+                        <button  onClick={function(){
+
+                        names.splice(i, 1);
+                        setNames([...names])
+
+                    }}>Delete</button>
+                     <button  onClick={function(){
+
+                        let nName = prompt("Enter new name")
+
+                        names[i] = nName;
+                        setNames([...names])
+
+                    }}>Update</button>
+                    </li>;
+            })
+        }
+        </ol>
+
+        <button onClick={function(){
+
+            let nName = prompt("Enter new name");
+            names.push(nName);
+
+            setNames([...names])
+
+            console.log(names);
+       
+
+        }}>Add name</button>
+    </div>
+
+
+
+}
+
+
+export default function Data(){
+
+    // componnet ka aik life cycle
+    // 1 component banta h 
+    // 2 component update hota h
+    // 3 component khatam hojata h 
+
+    let students = [
+        {
+            name:'ali',
+            uni:'GC'
+        },
+        {
+            name:'aqsa',
+            uni:'agri'
+        },
+        {
+            name:'rameez',
+            uni:'TUFF'
+        }
+    ]
+
+    let products = [
+        {
+            title :"product 1"
+        },
+        {
+            title :"product 2"
+        },
+        {
+            title :"product 3"
+        }
+    ]
+
+    return <div>
+
+        <Some></Some>
+
+
+        {
+            products.map(function(product, m){
+                return <div key={m}>
+                        {/* <h1>aksdjksa</h1> */}
+                        <Card title={product.title} />
+                      </div>
+            })
+        }
+
+        {/* <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Uni</th>
+                </tr>
+            </thead>
+            {
+                students.map((student)=>{
+                    return <tr>
+                        <td>{student.name}</td>
+                        <td>{student.uni}</td>
+                    </tr>
+                })
+            }
+        </table> */}
+
+
+    </div>
+
+}
