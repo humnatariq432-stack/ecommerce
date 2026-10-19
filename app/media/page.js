@@ -24,7 +24,7 @@ export default function Media(){
 
             {/* <ToastContainer theme="dark" position="bottom-left" /> */}
 
-            <YouTube videoId="t0Q2otsqC4I"  />
+            
     </div>
 
 }
