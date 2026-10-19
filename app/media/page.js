@@ -1,6 +1,6 @@
 "use client";
 
-import YouTube from 'react-youtube';
+
   import { ToastContainer, toast } from 'react-toastify';
 
 export default function Media(){
