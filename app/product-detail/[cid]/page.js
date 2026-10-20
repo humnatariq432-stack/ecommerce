@@ -4,13 +4,12 @@ import './styles.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { addName, removeName, updateName } from '@/store/userReducer';
+import { addName, removeName, setValue, updateName } from '@/store/userReducer';
 
 export default function Page(){
 
   let some = useParams();
   let [product, setProduct] = useState({});
- 
 
   // agar store m data send krna to  useDispatch();
 let dispatch = useDispatch();
@@ -23,13 +22,13 @@ let dispatch = useDispatch();
   useEffect(function(){
 
     axios.get('https://dummyjson.com/products/'+some.cid).then(function(resp){
-     
+      debugger
       console.log(resp.data);
       setProduct(resp.data)
 
     });
 
-  }, [])
+  }, [some.cid])
 
     function changeImage(event, src) {
             document.getElementById('mainImage').src = src;
@@ -54,7 +53,7 @@ let dispatch = useDispatch();
   <div className="row">
     {/* Product Images */}
     <div className="col-md-6 mb-4">
-      <img
+      <image
         src={product?.images?.[0]}
         alt="Product"
         className="img-fluid rounded mb-3 product-image"
@@ -63,7 +62,7 @@ let dispatch = useDispatch();
       <div className="d-flex justify-content-between">
         {
           product.images?.map(function(imge){
-        return <img
+        return <image  key={imge}
           src={imge}
           alt="Thumbnail 1"
           className="thumbnail rounded active"
@@ -137,6 +136,12 @@ let dispatch = useDispatch();
           Quantity:
         </label>
         <input
+         onChange={function(evt){
+          dispatch(  setValue({
+            id:product.id,
+            qty:evt.target.value
+          }) )
+         }}
           type="number"
           className="form-control"
           id="quantity"

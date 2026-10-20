@@ -46,7 +46,7 @@ function MyProducts() {
                             return (
                                 <tr key={product._id}> 
                                     <td>
-                                        <img src={product.images[0]} width="200" alt="Product" />
+                                        <image src={product.images[0]} width="200" alt="Product" />
                                     </td>
                                     <td>{product.title}</td>
                                     <td>{product.description}</td>

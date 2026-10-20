@@ -42,7 +42,7 @@ function Users(){
             <tbody>
                 {
                   users?.map(function(user){
-                    return  <tr>
+                    return  <tr key={user.id}>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>
